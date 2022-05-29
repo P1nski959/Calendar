@@ -14,6 +14,7 @@ namespace CalendarApp
     public partial class UserControlDays : UserControl
     {
         String connString = "server=localhost;user id=root;database=calendar;sslmode=none";
+
         //static variable for day
         public static string static_day;
         public UserControlDays()
@@ -45,7 +46,7 @@ namespace CalendarApp
         {
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
-            String sql = "SELECT FROM calendar where date = ?";
+            String sql = "SELECT * FROM calendar where date = ?";
             MySqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = sql;
             cmd.Parameters.AddWithValue("date", Form1.static_year + "-" + Form1.static_month + "-" + lbdays.Text);

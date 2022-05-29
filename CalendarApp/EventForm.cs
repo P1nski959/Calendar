@@ -24,7 +24,7 @@ namespace CalendarApp
         private void EventForm_Load(object sender, EventArgs e)
         {
             //calling static variables
-            txdate.Text = Form1.static_month + "/" + UserControlDays.static_day + "/" + Form1.static_year;
+            txdate.Text = Form1.static_year + "-" + Form1.static_month + "-" + UserControlDays.static_day;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
