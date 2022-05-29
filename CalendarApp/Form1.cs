@@ -14,6 +14,9 @@ namespace CalendarApp
     public partial class Form1 : Form
     {
         int month, year;
+
+        //ststic variable passing mont and year to another form
+        public static int static_month, static_year;
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +35,9 @@ namespace CalendarApp
 
             String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LBDATE.Text = monthname + " " + year;
+
+            static_month = month;
+            static_year = year;
 
             //gets first days of the month
             DateTime startofthemonth = new DateTime(year, month, 1);
@@ -65,6 +71,9 @@ namespace CalendarApp
 
             //decrement month to go to previous
             month--;
+
+            static_month = month;
+            static_year = year;
 
             String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LBDATE.Text = monthname + " " + year;
@@ -103,6 +112,9 @@ namespace CalendarApp
             //increment month to go to next
             month++;
 
+            static_month = month;
+            static_year = year;
+
             String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             LBDATE.Text = monthname + " " + year;
 
@@ -113,7 +125,6 @@ namespace CalendarApp
             int days = DateTime.DaysInMonth(year, month);
 
             //turns startofthemonth to integer
-
             int dayoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
 
             //add blank user control
@@ -130,6 +141,7 @@ namespace CalendarApp
                 ucdays.days(i);
                 daycontainer.Controls.Add(ucdays);
             }
+
         }
     }
 }

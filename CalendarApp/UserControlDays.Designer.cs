@@ -51,6 +51,7 @@ namespace CalendarApp
             this.Name = "UserControlDays";
             this.Size = new System.Drawing.Size(218, 135);
             this.Load += new System.EventHandler(this.UserControlDays_Load);
+            this.Click += new System.EventHandler(this.UserControlDays_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
