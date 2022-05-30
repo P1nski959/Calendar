@@ -65,6 +65,12 @@ namespace CalendarApp
             }
         }
 
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            //closes Form1
+            Close();
+        }
+
         private void btnprevious_Click(object sender, EventArgs e)
         {
             daycontainer.Controls.Clear();

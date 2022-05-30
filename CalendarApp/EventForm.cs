@@ -41,5 +41,10 @@ namespace CalendarApp
             cmd.Dispose();
             conn.Close();
         }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
